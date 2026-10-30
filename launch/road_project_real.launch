@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Launch control nodes in order -->
+
+  <node pkg="autonomous_systems_project_team_3" type="speed_control_real.py" name="speed_control_real" output="screen" />
+  <node pkg="autonomous_systems_project_team_3" type="lateral_control_real.py" name="lateral_control_real" output="screen" />
+  <node pkg="autonomous_systems_project_team_3" type="position_control_real.py" name="position_control_real" output="screen" />
+  <node pkg="autonomous_systems_project_team_3" type="planner_real.py" name="planner_real" output="screen" />
+  <node pkg="autonomous_systems_project_team_3" type="localization_real.py" name="localization_real" output="screen" />
+</launch>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- Start the ROS node for open-loop response testing -->
+  <node pkg="autonomous_systems_project_team_3"
+        type="Autonomous_Systems_MS_2_OLR_Team_3.py"
+        name="olr_testing"
+        output="screen">
+    <!-- Example parameters, adjust as needed -->
+    <param name="throttle" value="0.5" />
+    <param name="steering" value="0.1" />
+    <param name="brake" value="0.0" />
+    <param name="gear" value="0" />
+  </node>
+
+</launch>

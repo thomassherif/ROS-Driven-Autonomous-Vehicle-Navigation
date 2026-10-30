@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+  <include file="$(find audibot_gazebo)/launch/audibot_robot.launch" >
+    <arg name="start_x" value="0" />
+    <arg name="start_y" value="0" />
+    <arg name="start_z" value="0" />
+    <arg name="start_yaw" value="0" />
+    <arg name="pub_tf" value="true" />
+    <arg name="tf_freq" value="100.0" />
+    <arg name="blue" value="false" />
+  </include>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <node pkg="rviz" type="rviz" name="single_vehicle_viz" args="-d $(find audibot_gazebo)/rviz/single_vehicle_example.rviz" />
+
+  <!-- Set the goal_x and goal_y parameters -->
+  <param name="goal_x" value="-50.0" />
+  <param name="goal_y" value="-50.0" />
+
+  <!-- Speed Control Node -->
+  <node pkg="autonomous_systems_project_team_3" type="position_control.py" name="position_control" output="screen"/>
+  <node pkg="autonomous_systems_project_team_3" type="lateral_control.py" name="lateral_control" output="screen"/>
+  <node pkg="autonomous_systems_project_team_3" type="speed_control.py" name="speed_control" output="screen"/>
+
+
+</launch>   
